@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Ngày Valentine</title>
+    <style>
+        /* Thiết kế nền và định dạng toàn trang */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Video bên trái */
+        .video-left, .video-right {
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Để video nằm dưới các phần tử khác */
+        }
+
+        /* Video bên trái */
+        .video-left {
+            left: 0;
+        }
+
+        /* Video bên phải */
+        .video-right {
+            right: 0;
+        }
+
+        /* Khung chứa nội dung */
+        .message-container {
+            background-color: rgb(123, 161, 136);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 70%;
+            max-width: 500px;
+            z-index: 1;
+            position: absolute;
+            animation: move-around 10s infinite ease-in-out;
+            display: none; /* Ẩn khung thông điệp ban đầu */
+        }
+
+        /* Tạo animation di chuyển cho khung */
+        @keyframes move-around {
+            0% { left: 10%; }
+            50% { left: 70%; }
+            100% { left: 10%; }
+        }
+
+        /* Phần tiêu đề */
+        h1 {
+            color: #e60000;
+            font-size: 2.5em;
+        }
+
+        /* Phần nội dung thông điệp */
+        p {
+            color: #333;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+
+        /* Chèn ảnh trái tim */
+        .heart img {
+            width: 150px;
+            height: 150px;
+            margin: 20px auto;
+            animation: pulse 1.5s infinite;
+        }
+
+        /* Hiệu ứng "pulse" cho hình trái tim */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        /* Button để gửi thông điệp */
+        .btn {
+            background-color: #b0dab5;
+            color: rgb(38, 139, 97);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            margin-top: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hiệu ứng hover cho button */
+        .btn:hover {
+            background-color: #e9e1a2;
+        }
+
+        /* Button kết thúc */
+        .btn-end {
+            background-color: #cc5563;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hiệu ứng hover cho button kết thúc */
+        .btn-end:hover {
+            background-color: #e8a9a9;
+        }
+
+        /* Button kết thúc thứ hai */
+        .btn-second-end {
+            background-color: #cc5563;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hiệu ứng hover cho button kết thúc thứ hai */
+        .btn-second-end:hover {
+            background-color: #e8a9a9;
+        }
+
+        /* Thông báo khi nhấn nút kết thúc */
+        .finish-message {
+            display: none;
+            color: rgb(182, 225, 210);
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Video bên trái -->
+    <video class="video-left" autoplay muted loop>
+        <source src="video/nghi.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Video bên phải -->
+    <video class="video-right" autoplay muted loop>
+        <source src="video/2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Nút nhấn để mở thông điệp -->
+    <button class="btn" onclick="showMessage()">月ray&carrðtte</button>
+
+    <!-- Khung thông điệp sẽ hiển thị khi nhấn nút -->
+    <div class="message-container" id="message-box">
+        <h1>Happy Valentine!</h1>
+        <div class="heart">
+            <!-- Chèn hình ảnh trái tim từ thư mục 'images' -->
+            <img src="im/1.jpg" alt="Heart Image">
+            <img src="im/3.jpg" alt="Heart Image">
+            <img src="im/2.jpg" alt="Heart Image">
+        </div>
+        <p>Em yêu,
+
+            Chúc em một ngày Valentine thật ngọt ngào và đầy yêu thương. Anh cảm thấy vô cùng may mắn khi có em bên cạnh, là người luôn làm cho cuộc sống của anh trở nên trọn vẹn. Cảm ơn em vì tất cả tình yêu và sự ủng hộ mà em dành cho anh. Anh sẽ luôn yêu em. Hy vọng chúng ta sẽ cùng nhau viết nên những kỷ niệm đẹp trong hành trình cuộc sống này. 💖
+            
+            Anh yêu em nhiều!
+            
+        </p>
+        <!-- Nút kết thúc -->
+        <button class="btn-end" onclick="endMessage()">Em cũng yêu anh nhiều</button>
+        <!-- Nút kết thúc thứ hai -->
+        <button class="btn-second-end" onclick="endMessage()">Chồng em tuyệt vời nhất</button>
+    </div>
+
+    <!-- Thông báo sau khi nhấn nút kết thúc -->
+    <div class="finish-message" id="finish-message">
+        Cảm ơn em đã hợp tác, Ngày valentine thật vui vẻ nhé!
+    </div>
+
+    <script>
+        function showMessage() {
+            // Hiển thị khung thông điệp khi nhấn nút
+            document.getElementById('message-box').style.display = 'block';
+            // Ẩn nút sau khi nhấn
+            document.querySelector('.btn').style.display = 'none';
+            // Dừng animation di chuyển của khung thông điệp
+            document.getElementById('message-box').style.animation = 'none';
+        }
+
+        function endMessage() {
+            // Ẩn khung thông điệp khi nhấn nút "Kết thúc"
+            document.getElementById('message-box').style.display = 'none';
+            // Hiển thị thông báo sau khi nhấn "Kết thúc"
+            document.getElementById('finish-message').style.display = 'block';
+            // Hiển thị lại nút ban đầu sau khi nhấn "Kết thúc"
+            setTimeout(function() {
+                document.querySelector('.btn').style.display = 'block';
+                // Ẩn thông báo kết thúc sau 3 giây và bắt đầu lại
+                document.getElementById('finish-message').style.display = 'none';
+            }, 3000); // Sau 3 giây sẽ quay lại trạng thái ban đầu
+        }
+
+        // Chặn hành động đóng trang web khi nhấn vào nút kết thúc
+        window.onbeforeunload = function() {
+            return "Bạn chắc chắn muốn rời khỏi trang này?";
+        };
+    </script>
+
+</body>
+</html>
